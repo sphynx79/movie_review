@@ -1,0 +1,17 @@
+= simple_form_for([@movie, @review], html: { class: 'well' }) do |f|
+  = f.error_notification
+  %fieldset
+    %legend= (params[:action]).capitalize + " Review"
+
+    .form-inputs
+      .form-group#star-rating
+      = f.input :comment,:input_html => {rows: "10"}
+
+    .form-actions
+      = f.button :submit
+
+:javascript
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });

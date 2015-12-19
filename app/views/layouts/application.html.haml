@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+    %title MovieReview
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .sk-fading-circle
+      .sk-circle1.sk-circle
+      .sk-circle2.sk-circle
+      .sk-circle3.sk-circle
+      .sk-circle4.sk-circle
+      .sk-circle5.sk-circle
+      .sk-circle6.sk-circle
+      .sk-circle7.sk-circle
+      .sk-circle8.sk-circle
+      .sk-circle9.sk-circle
+      .sk-circle10.sk-circle
+      .sk-circle11.sk-circle
+      .sk-circle12.sk-circle
+    = render 'layouts/header' 
+    .container
+      - flash.each do |name,msg|
+        = content_tag :div, msg, class: 'alert alert-info'
+      = yield
+

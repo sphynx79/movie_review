@@ -1,0 +1,15 @@
+= simple_form_for(@movie, html: { multipart: true , class: 'well' }) do |f|
+  %fieldset
+    %legend= (params[:action]).capitalize + " Movie"
+    = f.error_notification
+    = f.input :title
+    = f.input :description
+    = f.input :movie_length
+    = f.input :director
+    = f.input :rating
+    = f.input :image, as: :file
+    = f.button :submit
+
+
+
+
