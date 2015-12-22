@@ -11,10 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require masonry/jquery.masonry
+//= require masonry/modernizr-transitions
+//= require masonry/jquery.imagesloaded.min
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require plugin
 //= require_tree ./global
+//= require_tree ./specific
+
+
 
 

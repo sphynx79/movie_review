@@ -10,6 +10,9 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require 'masonry/transitions'
+ *= require 'masonry/centered.css'
+ *= require 'masonry/gutters'
  *= require_tree .
  *= require_self
  */
@@ -19,7 +22,7 @@
 @import "bootstrap";
 
 body {
-background: #AA4847;
+   background: #AA4847;
 }
 
 .review_title {
@@ -29,16 +32,35 @@ background: #AA4847;
 .reviews {
    padding: 15px 0;
    border-bottom: solid 1px #EAEAEA;
+
    .star-rating {
       padding-bottom: 8px;
    }
 }
 
 .modal {
-   .error{
-      color:red;
+   .error {
+      color: red;
       font-size: 0.8em;
       margin-bottom: 1em;
-      }
+   }
 }
 
+#movies {
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.box {
+   float: left;
+   margin: 15px;
+}
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
