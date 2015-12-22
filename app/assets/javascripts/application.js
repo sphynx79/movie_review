@@ -11,38 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
+//= require plugin
+//= require_tree ./global
 
-
-$(document).on('page:fetch', function() {
-  $(".sk-fading-circle").show();
-});
-
-$(document).on('page:change', function() {
-  $(".sk-fading-circle").hide();
-});
-//
-//
-// $( document ).ready(function() {
-//
-//   // hide spinner
-//   $(".sk-fading-circle").hide();
-//
-//
-//   // show spinner on AJAX start
-//   $(document).ajaxStart(function(){
-//     $(".sk-fading-circle").show();
-//   });
-//
-//   // hide spinner on AJAX stop
-//   $(document).ajaxStop(function(){
-//     $(".sk-fading-circle").delay(3000).hide(0);
-//   });
-//
-// });
-//
 

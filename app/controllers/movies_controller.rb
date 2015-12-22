@@ -2,8 +2,6 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show ]
 
-
-
   def search
      if params[:search].present?
         @movies = Movie.search(params[:search])
@@ -44,11 +42,12 @@ class MoviesController < ApplicationController
 
     respond_to do |format|
       if @movie.save
+        flash.now[:success] = "Post was successfully created."
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
+        format.js {}
       else
         format.html { render :new }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -67,8 +66,6 @@ class MoviesController < ApplicationController
     end
   end
 
-  # DELETE /movies/1
-  # DELETE /movies/1.json
   def destroy
     @movie.destroy
     respond_to do |format|

@@ -7,16 +7,17 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      =link_to "Brand", movies_path, class: 'navbar-brand'
+      =link_to "Movie Reviews", movies_path, class: 'navbar-brand'
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
         - if user_signed_in?
-          %li= link_to "New Movie", new_movie_path, class: "active"
+          %li= link_to "New Movie", new_movie_path, :remote => true, class: "active"
           %li= link_to "Account", edit_user_registration_path
+          %li= link_to "Sign Out", destroy_user_session_path, method: :delete
         - else
-          %li= link_to "Sign Up", new_user_registration_path, class: "active"
-          %li= link_to "Sign In", new_user_session_path, class: "active"
+          %li= link_to "Sign Up", remote_sign_up_path, :remote => true, class: "active"
+          %li= link_to "Sign In", remote_sign_in_path, :remote => true, class: "active"
       =form_tag search_movies_path, method: :get, class: "navbar-form navbar-right", role: "search" do
         %p
           = text_field_tag :search, params[:search], class: "form-control", :placeholder => "Search"

@@ -1,15 +1,22 @@
-= simple_form_for(@movie, html: { multipart: true , class: 'well' }) do |f|
-  %fieldset
-    %legend= (params[:action]).capitalize + " Movie"
-    = f.error_notification
-    = f.input :title
-    = f.input :description
-    = f.input :movie_length
-    = f.input :director
-    = f.input :rating
-    = f.input :image, as: :file
-    = f.button :submit
+.modal-dialog
+  .modal-content
+    .modal-header
+      %button.close{"data-dismiss" => "modal" }
+        %span ×
+      %h4.modal-title 
+        =action_name.capitalize 
+        Movie
 
-
-
+    .modal-body
+      = simple_form_for(@movie, remote: true,  html: { multipart: true , class: 'well' }, authenticity_token: true) do |f|
+        %fieldset
+          %legend= (params[:action]).capitalize + " Movie"
+          = f.error_notification
+          = f.input :title, autofocus: true
+          = f.input :description
+          = f.input :movie_length
+          = f.input :director
+          = f.input :rating
+          = f.input :image, as: :file
+          = f.button :submit, {:style => "float: right;"}
 

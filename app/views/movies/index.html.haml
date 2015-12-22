@@ -5,7 +5,6 @@
     %p= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg"
     
 %row
-  - @movies.each do |movie|
-    .col-sm-6.col-md-3
-      .thumbnail
-        =link_to (image_tag movie.image.url(:medium), class: 'image'), movie
+  #movies
+    = render "movies"
+

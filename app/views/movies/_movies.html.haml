@@ -1,0 +1,7 @@
+- @movies.each do |movie|
+  =render movie
+
+<script type='text/javascript'>
+= render(:partial => 'notification', :handlers => [:erb], :formats => [:js])
+</script>
+

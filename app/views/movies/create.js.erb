@@ -1,0 +1,21 @@
+<% if @movie.errors.any? %>
+   $( ".error" ).remove();
+   <% if @movie.errors[:title]%>
+      $( "<div class='error'><%= @movie.errors[:title].first %> </div>" ).insertAfter( $("#movie_title"));
+   <% end %>
+   <% if @movie.errors[:description]%>
+      $( "<div class='error'><%= @movie.errors[:description].first %> </div>" ).insertAfter( $("#movie_description"));
+   <% end %>
+<% else %>
+   $("#modal-window").modal("hide")
+   if( $('#movies').length )        
+      {$("<%= j(render @movie) %>").hide().appendTo('#posts').show().addClass('magictime puffIn'); } 
+   else { 
+    var post = $('<%= j(render :file => 'posts/show') %>').hide();
+    $('#post_contents').replaceWith(post);
+    $('#post_contents').show().addClass('magictime spaceInUp')
+    window.history.pushState('','',"<%= @post.id %>");
+    }
+    <%= render 'notification', formats: [:js] %>
+<% end %>
+

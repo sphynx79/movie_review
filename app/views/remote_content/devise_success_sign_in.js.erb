@@ -1,0 +1,12 @@
+$('.modal').modal('hide')
+
+<%= render 'notification', formats: [:js] %>
+
+<% flash.clear %>
+
+setTimeout(function(){
+    window.location.href = "<%= escape_javascript(@after_sign_in_path) %>";
+}, 4500);
+
+
+

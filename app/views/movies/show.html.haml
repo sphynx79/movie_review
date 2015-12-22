@@ -27,7 +27,12 @@
               %td
                 %strong Rating:
               %td= @movie.rating
-        = link_to "Write a Review", new_movie_review_path(@movie)
+        
+        .buttons.btn-group.btn-group-xs.pull-right
+          = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+          = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"
+          = link_to 'Back', movies_path, class: "btn btn-default"
+
       .col-md-7.col-md-offset-1
         %h1.review_title=@movie.title
         %p=@movie.description
@@ -39,12 +44,9 @@
           - @reviews.each do |review|
             .reviews
               %div.star-rating(data-score="#{review.rating}")
-              %p= review.comment
-
-
-= link_to 'Edit', edit_movie_path(@movie)
-\|
-= link_to 'Back', movies_path
+                %p= review.comment
+        = link_to "Write a Review", new_movie_review_path(@movie), :class => "pull-right"
+    
 
 :javascript
   $('.star-rating').raty({
