@@ -1,2 +1,26 @@
-=link_to (image_tag movie.image.url(:medium), class: 'image'), movie
+.movie
+  .image
+    =link_to (image_tag movie.image.url(:thumb)), movie
+  .title
+    %h4
+      =link_to movie.title, movie
+    .star-rating(data-score="#{movie_review(movie)}")
+    %h6
+      %span
+        %strong Description:
+      = truncate(movie.description, :length => 120, omission: '... (continued)')
+    %h6
+      %span
+        %strong Director:
+      = movie.director
 
+        
+
+:javascript
+  $('.star-rating').raty({
+        path: '/assets/',
+        readOnly: true,
+        score: function() {
+              return $(this).attr('data-score');
+      }
+    });

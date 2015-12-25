@@ -3,3 +3,4 @@ $ ->
     $('#movies').masonry
       itemSelector: '.box',
       isFitWidth: true
+

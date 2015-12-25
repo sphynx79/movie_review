@@ -1,52 +1,34 @@
-.panel.panel-default
-  .panel-body
-    .row
-      .col-md-4
-        =image_tag @movie.image.url(:medium)
-        %div.star-rating(data-score="#{@avg_review}")
-        %em="#{@reviews.length} reviews"
-        %table.table
-          %tbody
-            %tr
-              %td
-                %strong Title:
-              %td= @movie.title
-            %tr
-              %td
-                %strong Description:
-              %td= @movie.description
-            %tr
-              %td
-                %strong Movie length:
-              %td= @movie.movie_length
-            %tr
-              %td
-                %strong Director:
-              %td= @movie.director
-            %tr
-              %td
-                %strong Rating:
-              %td= @movie.rating
-        
-        .buttons.btn-group.btn-group-xs.pull-right
-          = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
-          = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"
-          = link_to 'Back', movies_path, class: "btn btn-default"
+.row
+  .col-md-4
+    =image_tag @movie.image.url(:medium)
+    %div.star-rating(data-score="#{@avg_review}")
+    %em="#{@reviews.length} reviews"
+    - if @reviews.blank?
+      %h3 No reviews just yet, would you like to add the first!
+      = link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger"
+    - else
+      - @reviews.each do |review|
+        .reviews
+          %div.star-rating(data-score="#{review.rating}")
+            %p= review.comment
+    = link_to "Write a Review", new_movie_review_path(@movie), :class => "pull-right"
+  .col-md-7.col-md-offset-1
+    .panel.panel-default
+      .panel-heading=@movie.title
+      .panel-body
+        .row
+          .col-md-2
+            %strong Title:
+          .col-md-9.col-md-offset-1
+            =@movie.title
+      
+              
+  .buttons.btn-group.btn-group-xs.pull-right
+    = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+    = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"
+    = link_to 'Back', movies_path, class: "btn btn-default"
 
-      .col-md-7.col-md-offset-1
-        %h1.review_title=@movie.title
-        %p=@movie.description
 
-        - if @reviews.blank?
-          %h3 No reviews just yet, would you like to add the first!
-          = link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger"
-        - else
-          - @reviews.each do |review|
-            .reviews
-              %div.star-rating(data-score="#{review.rating}")
-                %p= review.comment
-        = link_to "Write a Review", new_movie_review_path(@movie), :class => "pull-right"
-    
 
 :javascript
   $('.star-rating').raty({

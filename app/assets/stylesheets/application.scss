@@ -22,7 +22,7 @@
 @import "bootstrap";
 
 body {
-   background: #AA4847;
+   background: #FFFFFF;
 }
 
 .review_title {
@@ -47,13 +47,13 @@ body {
 }
 
 #movies {
-  padding: 5px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  clear: both;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-          border-radius: 5px;
+   padding: 5px;
+   margin-bottom: 20px;
+   border-radius: 5px;
+   clear: both;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
 }
 
 .box {
@@ -61,6 +61,78 @@ body {
    margin: 15px;
 }
 
-.clearfix:before, .clearfix:after { content: ""; display: table; }
-.clearfix:after { clear: both; }
-.clearfix { zoom: 1; }
+.clearfix:before, .clearfix:after {
+   content: "";
+   display: table;
+}
+
+.clearfix:after {
+   clear: both;
+}
+
+.clearfix {
+   zoom: 1;
+}
+
+.movie {
+   border: 1px solid #ddd;
+   background: #F8F8F8;
+   padding: 5px;
+   box-sizing: border-box;
+   width: 232px;
+   -webkit-box-shadow: 4px 4px 12px -2px rgba(0, 0, 0, 0.49);
+   -moz-box-shadow: 4px 4px 12px -2px rgba(0, 0, 0, 0.49);
+   box-shadow: 4px 4px 12px -2px rgba(0, 0, 0, 0.49);
+   border-radius: 12px;
+
+   .image {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      width: 202px;
+      border-radius: 2px;
+   }
+
+   .title {
+      margin: 5px;
+      padding-bottom: 10px;
+      height: 186px;
+      overflow: hidden;
+      position: relative;
+
+      h4 {
+         font-weight: 500;
+         line-height: 1.1;
+         color: inherit;
+      }
+
+      .star-rating {
+         margin-bottom: 6px;
+      }
+
+      a {
+         text-transform: capitalize;
+         text-decoration: none;
+      }
+
+      h6 {
+         color: #999;
+         font-size: 0.938em;
+         line-height: 20px;
+         margin: 0 0 0 5px;
+         font-weight: 500;
+
+         span {
+            color: #333;
+            font-size: 0.938em;
+            text-transform: capitalize;
+            padding-right: 5px;
+         }
+      }
+   }
+}
+
+
