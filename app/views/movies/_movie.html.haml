@@ -1,25 +1,39 @@
-.movie
-  .image
-    =link_to (image_tag movie.image.url(:thumb)), movie
-  .title
-    %h4
-      =link_to movie.title, movie
-    .star-rating(data-score="#{movie_review(movie)}")
-    %h6
-      %span
-        %strong Description:
-      = truncate(movie.description, :length => 120, omission: '... (continued)')
-    %h6
-      %span
-        %strong Director:
-      = movie.director
+= link_to(movie, :class => 'review') do
+  %figure
+    =image_tag movie.image.url(:thumb)
+    %figcaption
+      %h6
+        = movie.title
+        %span.star-rating(data-score="#{movie_review(movie)}")
+      =time_tag movie.created_at.to_date, pubdate: true
+      %span  - 
+      %span=movie.director
 
+-# = link_to(movie, :class => 'review') do
+-#   %figure=image_tag movie.image.url(:thumb), :class => 'review')
+-#   .title
+-#     %h4
+-#       =link_to movie.title, movie
+-#     .star-rating(data-score="#{movie_review(movie)}")
+-#     %h6
+-#       %span
+-#         %strong Description:
+-#       = truncate(movie.description, :length => 120, omission: '... (continued)')
+-#     %h6
+-#       %span
+-#         %strong Director:
+-#       = movie.director
+-#
         
 
 :javascript
   $('.star-rating').raty({
         path: '/assets/',
         readOnly: true,
+        size: 10,
+        starHalf: 'star-half-small.png',
+        starOff: 'star-off-small.png',
+        starOn: 'star-on-small.png',
         score: function() {
               return $(this).attr('data-score');
       }
