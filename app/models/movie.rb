@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
    searchkick
    belongs_to :user
-   has_many :review
+   has_many :reviews
    
    validates  :title, :description, presence: true
 

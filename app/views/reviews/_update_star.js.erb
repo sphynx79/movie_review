@@ -1,0 +1,10 @@
+ $('.star-rating').raty({
+        path: '/assets/',
+        score: <%= @avg_review %>
+    });
+ $('#star-rating').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]',
+        score: <%= @avg_review %>
+    });
+$('.reviews-number').text( <%= @reviews.length %> + "  reviews");

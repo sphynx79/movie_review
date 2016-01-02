@@ -1,32 +1,56 @@
 .row
   .col-md-4
     =image_tag @movie.image.url(:medium)
-    %div.star-rating(data-score="#{@avg_review}")
-    %em="#{@reviews.length} reviews"
-    - if @reviews.blank?
-      %h3 No reviews just yet, would you like to add the first!
-      = link_to "Write Review", new_movie_review_path(@movie), class: "btn btn-danger"
-    - else
-      - @reviews.each do |review|
-        .reviews
-          %div.star-rating(data-score="#{review.rating}")
-            %p= review.comment
-    = link_to "Write a Review", new_movie_review_path(@movie), :class => "pull-right"
   .col-md-7.col-md-offset-1
     .panel.panel-default
       .panel-heading=@movie.title
       .panel-body
         .row
-          .col-md-2
+          .col-md-3
             %strong Title:
-          .col-md-9.col-md-offset-1
+          .col-md-9
             =@movie.title
+        .row
+          .col-md-3
+            %strong Description:
+          .col-md-9
+            =@movie.description
+        .row
+          .col-md-3
+            %strong Movie length:
+          .col-md-9
+            =@movie.movie_length 
+        .row
+          .col-md-3
+            %strong Director:
+          .col-md-9
+            =@movie.director 
+        .row
+          .col-md-3
+            %strong Rating:
+          .col-md-9
+            =@movie.rating 
+        .row
+          .col-md-3
+            %strong Reviews:
+          .col-md-9
+            %div.star-rating(data-score="#{@avg_review}")
+            %em.reviews-number="#{@reviews.length} reviews"
+        .row
+          .col-md-12
+            #reviews
+              = render @movie.reviews
+
+              %h3#review_form_header Write a review
+              = render "reviews/form"
+
+
       
               
-  .buttons.btn-group.btn-group-xs.pull-right
-    = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
-    = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"
-    = link_to 'Back', movies_path, class: "btn btn-default"
+        .buttons.btn-group.btn-group-xs.pull-right
+          = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
+          = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"
+          = link_to 'Back', movies_path, class: "btn btn-default"
 
 
 

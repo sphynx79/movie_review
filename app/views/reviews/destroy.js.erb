@@ -1,0 +1,6 @@
+$('#<%= "review_#{@review.id}" %>').fadeOut("normal",function(){
+        $(this).remove();
+    });
+<%= render 'update_star', formats: [:js] %>
+<%= render 'notification', formats: [:js] %>
+

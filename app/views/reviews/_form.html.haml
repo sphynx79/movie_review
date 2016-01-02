@@ -1,17 +1,23 @@
-= simple_form_for([@movie, @review], html: { class: 'well' }) do |f|
+= simple_form_for([@movie, @movie.reviews.build], remote: true) do |f|
   = f.error_notification
-  %fieldset
-    %legend= (params[:action]).capitalize + " Review"
 
-    .form-inputs
-      .form-group#star-rating
-      = f.input :comment,:input_html => {rows: "10"}
+  .form-inputs
+    .commentBox
+      %span.headerTxt  Give a rating:
+      %span#star-rating(data-score="#{@avg_review}")
+      %em.reviews-number="#{@reviews.length} reviews"
+    .form-group
+    = f.input :comment,:placeholder => "What is your opinion?", :input_html => {rows: "4"}, label: false
 
-    .form-actions
-      = f.button :submit
+  .form-actions
+    = f.button :submit
 
 :javascript
   $('#star-rating').raty({
     path: '/assets/',
-    scoreName: 'review[rating]'
+    scoreName: 'review[rating]',
+    score: function() {
+              return $(this).attr('data-score');
+      }
+  
   });
