@@ -39,14 +39,11 @@
         .row
           .col-md-12
             #reviews
-              = render @movie.reviews
-
               %h3#review_form_header Write a review
               = render "reviews/form"
+              = render @moviereview.reviews
 
 
-      
-              
         .buttons.btn-group.btn-group-xs.pull-right
           = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
           = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"

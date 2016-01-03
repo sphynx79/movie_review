@@ -17,16 +17,21 @@
  *= require_self
  */
 
+
+// import Lato Font
+@import url(https://fonts.googleapis.com/css?family=Lato);
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 body {
+   font-family: 'Lato', sans-serif;
+   font-weight: 200; 
    background: #FFFFFF;
 }
 
 h5, h6 {
-   font-family: "Helvetica Neue",Helmet,Freesans,sans-serif;
+   font-family: 'Lato', sans-serif;
    font-weight: 700;
 }
 
@@ -156,6 +161,7 @@ h5, h6 {
       border-bottom: 1px solid #D1d1d1;
       margin-bottom: 1.2em;
       margin-top: 20px;
+      padding-bottom: 10px;
 
       .content {
          width: 98%;
@@ -172,6 +178,7 @@ h5, h6 {
          padding: 0;
          width: 70%;
          margin: 0px;
+         color: #696969;
       }
 
       .review_author {

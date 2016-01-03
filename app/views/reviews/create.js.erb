@@ -1,5 +1,5 @@
 <%  unless  @review.errors.any?  %>
-$( '<%= j(render @review) %>' ).hide().insertBefore($('#review_form_header').last()).show( "slow" );
+$( '<%= j(render @review) %>' ).hide().insertAfter($('#new_review').last()).show( "slow" );
 $("#new_review").trigger('reset');
 <%= render 'update_star', formats: [:js] %>
 <% end  %>
