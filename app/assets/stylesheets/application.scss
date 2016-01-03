@@ -174,12 +174,24 @@ h5, h6 {
 
       .review_content {
          font-size: 1.1em;
-         margin: 0;
+         margin: 0 0 10px 0;
          padding: 0;
          width: 70%;
-         margin: 0px;
          color: #696969;
+         text-align: justify;
       }
+
+      .review_time{
+         font-size: .8em;
+         color: #8e8e8e;
+         font-style: italic;
+         
+         }
+      .review_rating{
+         display: inline;
+         margin-left: 5px;
+         }
+
 
       .review_author {
          color: #397CAC;
