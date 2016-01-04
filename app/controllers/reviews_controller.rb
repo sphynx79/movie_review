@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_movie
   before_action :authenticate_user!,  except: [:create]
+  before_action :job_owner, only: [:edit, :update, :destroy]
 
 
   # GET /reviews/new
@@ -86,5 +87,12 @@ class ReviewsController < ApplicationController
          params["review"]["rating"] = 0
       end
       params.require(:review).permit(:rating, :comment)
+    end
+
+    def job_owner
+     unless @review.user_id == current_user.id
+      flash[:notice] = 'Access denied as you are not owner of this Job'
+      redirect_to @movie
+     end
     end
 end
