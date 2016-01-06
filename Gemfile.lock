@@ -68,7 +68,6 @@ GEM
       execjs
     coffee-script-source (1.9.1.1)
     debug_inspector (0.0.2)
-    decent_exposure (2.3.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -177,6 +176,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     ruby_parser (3.7.1)
@@ -237,7 +237,6 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.5)
   byebug
   coffee-rails (~> 4.1.0)
-  decent_exposure (~> 2.3.2)
   devise (~> 3.5.2)
   haml-rails (~> 0.9.0)
   hirb (~> 0.7.3)
@@ -249,6 +248,7 @@ DEPENDENCIES
   paperclip (~> 4.2.4)
   puma (~> 2.15.3)
   rails (= 4.2.3)
+  remotipart (~> 1.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searchkick (~> 0.9.1)

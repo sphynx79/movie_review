@@ -40,13 +40,12 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.build(movie_params)
 
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
     respond_to do |format|
       if @movie.save
         flash.now[:success] = "Post was successfully created."
-        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
-        format.js {}
+        format.js {render "create.js.erb"}
       else
-        format.html { render :new }
         format.js {}
       end
     end

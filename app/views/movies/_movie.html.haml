@@ -1,13 +1,14 @@
-= link_to(movie, :class => 'review') do
-  %figure
-    =image_tag movie.image.url(:thumb)
-    %figcaption
-      %h6
-        = movie.title
-        %span.star-rating(data-score="#{movie_review(movie)}")
-      =time_tag movie.created_at.to_date, pubdate: true
-      %span  - 
-      %span=movie.director
+.box
+  = link_to(movie, :class => 'review') do
+    %figure
+      =image_tag movie.image.url(:thumb)
+      %figcaption
+        %h6
+          = movie.title
+          %span.star-rating(data-score="#{movie_review(movie)}")
+        =time_tag movie.created_at.to_date, pubdate: true
+        %span  - 
+        %span=movie.director
 
 -# = link_to(movie, :class => 'review') do
 -#   %figure=image_tag movie.image.url(:thumb), :class => 'review')
