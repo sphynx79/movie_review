@@ -20,24 +20,16 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.movie_id = @movie.id
-
-    respond_to do |format|
-      if @review.save
-        set_reviews
-        flash.now[:success] = 'Comment was successfully created.'
-        format.html { redirect_to @movie, notice: 'Review was successfully created.' }
-        format.js{}
-      else
-        format.html { render :new }
-        format.js {flash.now[:error] = @review.errors.full_messages.to_sentence}
-      end
+    if @review.save
+       flash.now[:success] = 'Comment was successfully created.' 
+       set_reviews
+    else
+       flash.now[:error] = @review.errors.full_messages.to_sentence
     end
+    respond_with(@review)
    else
       redirect_to  remote_sign_in_path and return
    end
-
-
-
   end
 
   # PATCH/PUT /reviews/1
@@ -55,11 +47,8 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     set_reviews
-    respond_to do |format|
-      flash.now[:info] = 'Review was successfully destroyed.'
-      format.html { redirect_to movie_path(@movie) }
-      format.js
-    end
+    flash.now[:info] = 'Review was successfully destroyed.'
+    respond_with(@review, location: -> { movie_path(@movie) })
   end
 
   private

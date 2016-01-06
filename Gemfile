@@ -39,13 +39,11 @@ gem 'masonry-rails', '~> 0.2.4'
 
 gem 'paperclip', '~> 4.2.4'
 
-gem 'searchkick', '~> 0.9.1'
-
 gem 'puma', '~> 2.15.3'
 
 gem 'remotipart', '~> 1.2.1'
 
-# gem 'responders', '~> 2.1.1'
+gem 'responders', '~> 2.1.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

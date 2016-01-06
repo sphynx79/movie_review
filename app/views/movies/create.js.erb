@@ -1,15 +1,15 @@
 <% if @movie.errors.any? %>
-$( ".error" ).remove();
-<% if @movie.errors[:title]%>
-$( "<div class='error'><%= @movie.errors[:title].first %> </div>" ).insertAfter( $("#movie_title"));
-<% end %>
-<% if @movie.errors[:description]%>
-$( "<div class='error'><%= @movie.errors[:description].first %> </div>" ).insertAfter( $("#movie_description"));
-<% end %>
+   $( ".error" ).remove();
+   <% if @movie.errors[:title]%>
+      $( "<div class='error'><%= @movie.errors[:title].first %> </div>" ).insertAfter( $("#movie_title"));
+   <% end %>
+   <% if @movie.errors[:description]%>
+      $( "<div class='error'><%= @movie.errors[:description].first %> </div>" ).insertAfter( $("#movie_description"));
+   <% end %>
 <% else %>
-$("#modal-window").modal("hide")
-if( $('#movies').length ){
-   $("<%= j(render @movie) %>").hide().appendTo('#movies').show();
+   $("#modal-window").modal("hide")
+   if( $('#movies').length ){
+      $("<%= j(render @movie) %>").hide().appendTo('#movies').show();
       $('#movies').masonry({
          isFitWidth: true,
          itemSelector: '.box'
@@ -17,7 +17,7 @@ if( $('#movies').length ){
          $('#movies').masonry('reload');
       });
 
-} 
+   } 
 else { 
    var movie = $('<%= j(render :file => 'movies/show') %>').hide();
    $('#movie_contents').replaceWith(movie);

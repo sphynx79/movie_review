@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show ]
+  responders :http_cache
+  
 
   def search
      if params[:search].present?
@@ -39,21 +41,15 @@ class MoviesController < ApplicationController
   # POST /movies.json
   def create
     @movie = current_user.movies.build(movie_params)
-
     @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
-    respond_to do |format|
-      if @movie.save
-        flash.now[:success] = "Post was successfully created."
-        format.js {render "create.js.erb"}
-      else
-        format.js {}
-      end
-    end
+    flash.now[:success] = "Movie was successfully created." if @movie.save
+    respond_with(@movies)
   end
 
   # PATCH/PUT /movies/1
   # PATCH/PUT /movies/1.json
   def update
+     
     respond_to do |format|
       if @movie.update(movie_params)
         format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
