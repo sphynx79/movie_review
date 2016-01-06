@@ -37,8 +37,10 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       if @review.update(review_params)
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
+        format.js {}
       else
         format.html { render :edit }
+        format.js {}
       end
     end
   end

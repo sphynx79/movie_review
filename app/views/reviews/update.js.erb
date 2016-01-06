@@ -1,1 +1,19 @@
-$("#star-rating").raty('setScore', 5);
+<%  unless @review.errors.any?  %>
+$("#modal-window").modal("hide")
+$("#review_<%= @review.id %>").replaceWith("<%= escape_javascript(render partial: 'review', locals: { review: @review} ) %>"); 
+
+var el = $("#review_<%= @review.id %> .review_content");
+   el.before("<div/>")
+   el.prev()
+   .width(el.width())
+   .height(el.height())
+   .css({
+      "position": "absolute",
+      "background-color": "#ffff99",
+      "opacity": ".9"   
+   })
+.fadeOut(500);
+<% end  %>
+
+
+<%= render 'notification', formats: [:js] %>

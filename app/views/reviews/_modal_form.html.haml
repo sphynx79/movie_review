@@ -1,0 +1,29 @@
+.modal-dialog
+  .modal-content
+    .modal-header
+      %button.close{"data-dismiss" => "modal" }
+        %span ×
+      %h4.modal-title 
+        =action_name.capitalize 
+        Review
+
+    .modal-body
+      = simple_form_for( [@movie, @review], remote: true) do |f|
+        = f.error_notification
+        .form-inputs
+          .form-group
+            = f.input :comment, :input_html => {rows: "4"}
+            %span.headerTxt  Give a rating:
+            %span#star-rating(data-score="#{@review.rating}")
+        .form-actions
+          = f.button :submit
+
+:javascript
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]',
+    score: function() {
+              return $(this).attr('data-score');
+      }
+  
+  });
