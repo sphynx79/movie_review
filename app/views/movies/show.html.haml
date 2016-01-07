@@ -3,7 +3,16 @@
     =image_tag @movie.image.url(:medium)
   .col-md-7.col-md-offset-1
     .panel.panel-default
-      .panel-heading=@movie.title
+      .panel-heading.clearfix
+        %b=@movie.title
+        #menucontainer{:style => "position: relative;"}
+          #editmenu
+            %em.glyphicon.glyphicon-cog
+          #user-options.toolbar-icons{:style => "display: none;"}
+            =link_to(edit_movie_path(@movie), method: :get) do
+              %em.glyphicon.glyphicon-edit
+            =link_to movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" } do
+              %em.glyphicon.glyphicon-trash
       .panel-body
         .row
           .col-md-3
@@ -48,6 +57,9 @@
           = link_to 'Delete', movie_path(@movie), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default"
           = link_to 'Edit', edit_movie_path(@movie), class: "btn btn-default"
           = link_to 'Back', movies_path, class: "btn btn-default"
+
+        = link_to edit_movie_path(@movie) do
+          %em.glyphicon.glyphicon-edit
 
 
 

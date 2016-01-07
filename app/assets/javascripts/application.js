@@ -23,4 +23,14 @@
 //= require_tree ./global
 //= require_tree ./specific
 
+$(document).ready(function() {
+$('#editmenu').toolbar({
+	content: '#user-options', 
+   position: 'bottom',
+   event: 'click',
+   hideOnClick: true
+});
+ 
+});
+
 

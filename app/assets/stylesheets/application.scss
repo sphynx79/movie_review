@@ -85,6 +85,11 @@ h5, h6 {
    zoom: 1;
 }
 
+.end-form{
+   border-bottom: 1px solid #D1D1D1; 
+   padding-top: 20px;
+   }
+
 #movies {
    .review h6 {
       margin-bottom: .35em;
@@ -144,7 +149,13 @@ h5, h6 {
    }
 }
 
-.panel-body {
+.panel{
+   b{
+      vertical-align: middle;
+      font-size: 1.4em;
+      text-transform: capitalize;
+      }
+   .panel-body {
    .row {
       padding-bottom: 4px;
       margin-bottom: 6px;
@@ -156,6 +167,9 @@ h5, h6 {
       margin-bottom: 6px;
    }
 }
+   
+   }
+
 
 #reviews {
    .review {
@@ -239,6 +253,47 @@ h5, h6 {
       margin-bottom: 1em;
       }
 }
+
+.btn-toolbar {
+    margin-bottom: 0;
+    height: 32px;
+    width:  32px;
+    font-weight: normal;
+    text-align: center;
+    padding: 6px 6px;
+}
+
+#menucontainer { display: block; float: right;} 
+
+em.glyphicon-cog {
+    font-size: 1.0em;
+}
+
+.tool-items{
+  .glyphicon{
+    top: 8px;
+    color: black;
+    font-size: .9em;
+    }
+}
+
+#editmenu {
+  display: block;
+  width: 36px;
+  height: 30px;
+  text-align: center;
+  padding-top: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border:1px solid #A2A2A2;
+  box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.28), 0px 1px 0px 0px rgba(255, 255, 255, 0.2);
+  background-color: #F7F7F7;
+  cursor: pointer;
+}
+
+#editmenu em { opacity: 1; }
+#editmenu:hover em { opacity: 0.9; }
 
 
 // #movies .box {position: absolute; left: -1000px}
