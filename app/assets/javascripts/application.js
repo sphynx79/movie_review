@@ -18,19 +18,10 @@
 //= require masonry/jquery.imagesloaded.min
 //= require jquery.remotipart
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require plugin
 //= require_tree ./global
 //= require_tree ./specific
+//= require turbolinks
 
-$(document).ready(function() {
-$('#editmenu').toolbar({
-	content: '#user-options', 
-   position: 'bottom',
-   event: 'click',
-   hideOnClick: true
-});
- 
-});
 
 

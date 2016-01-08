@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 
   var $boxes = $('.box');
   $boxes.hide();
@@ -14,6 +14,5 @@ $(document).ready(function() {
     });    
   });
 });
-
 
 
