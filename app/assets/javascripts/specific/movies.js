@@ -1,3 +1,4 @@
+
 $(function() {
 
   var $boxes = $('.box');
@@ -15,4 +16,15 @@ $(function() {
   });
 });
 
-
+// var MoviesController = Paloma.controller('Movies');
+//
+// MoviesController.prototype.index = function(){
+//    $('#test').bind('ajax:complete', function(event, xhr, status, error) {
+//      console.log(status);
+//      $("#modal-window").html(xhr.responseText);
+//      $("#modal-window").modal("show");
+//
+//    });
+//   
+// };
+//

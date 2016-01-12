@@ -1,8 +1,18 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show ]
-  responders :http_cache
+  before_action :authenticate_user!, except: [:index, :show, :test ]
+  before_filter :set_javascript_vars
   
+  
+  def test
+      @movie = current_user.movies.build
+      
+      #respond_with(@movies)
+      render :partial => "form", :locals => { :movie => @movie }, :layout => false, :status => :created
+      # format.json { head :no_content }
+      # format.js{ render :layout => false }
+      # render nothing: true
+  end
 
   def search
      if params[:search].present?
@@ -79,4 +89,9 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :description, :movie_length, :director, :rating, :image)
     end
+
+    def set_javascript_vars
+       to_javascript controller: controller_name.capitalize
+    end
+
 end

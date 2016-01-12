@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   match 'remote_sign_up', to: 'remote_content#remote_sign_up', via: [:get]
   match 'remote_sign_in', to: 'remote_content#remote_sign_in', via: [:get]
+  match 'test', to: 'movies#test', via: [:get]
 
   devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   # The priority is based upon order of creation: first created -> highest priority.
