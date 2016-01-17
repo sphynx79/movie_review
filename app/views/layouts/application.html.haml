@@ -9,18 +9,7 @@
     = render 'layouts/header' 
     .container
       / Modal
-      #new_movie_modal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-        .modal-dialog{:role => "document"}
-          .modal-content
-            .modal-header
-              %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                %span{"aria-hidden" => "true"} ×
-              %h4#myModalLabel.modal-title Modal title
-            .modal-body
-              = render 'form', modal: true
-            .modal-footer
-              %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-              %button.btn.btn-primary{:type => "button"} Save change
+      #modal-window.modal.fade{"aria-labelledby" => "myModalLabel", "aria-hidden"=> "true", :role => "dialog", :tabindex => "-1"}
       - flash.each do |name,msg|
         = content_tag :div, msg, class: 'alert alert-info'
       = yield

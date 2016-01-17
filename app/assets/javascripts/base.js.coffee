@@ -4,7 +4,7 @@ class App.Base
  constructor: ->
   if (window.jQuery) then @setClearEventHandlers() # clearing application event handlers only possible with jQuery
   #@setLinkEventHandlers()
-  #@setFormEventHandlers()
+  @setFormEventHandlers()
   new Element.Toast
   return this
 
@@ -48,16 +48,16 @@ class App.Base
          return this
 
    setFormEventHandlers: ->
-      # remote forms handler
-      $(document).bind('ajax:success', "form[data-remote=true]", (event, data, status, xhr) ->
-        debugger
-        console.log 'success'
+      $(document).bind('ajax:error', 'form#new_movie', (event, xhr, status, error) ->
+        console.log 'error'
         # note: jqxhr.responseJSON undefined, parsing responseText instead
-      ).bind('ajax:error', '#new_movie',(event, xhr, status, error) ->
-        event.preventDefault()
-        console.log error
-      )
-      return this
+        $(event.data).render_form_errors $.parseJSON(xhr.responseText)
+        return
+      ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->
+        console.log 'sucess'
+        return
+      
+
 
 
 

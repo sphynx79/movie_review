@@ -1,38 +1,21 @@
 - modal ||= false
 - remote = modal ? true : false
-= form_for(@movie, remote: remote, html: {role: :form, 'data-model' => 'movie'}) do |f|
-  - if @movie.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@movie.errors.count, "error")
-        prohibited this person from being saved:
-      %ul
-        - @movie.errors.full_messages.each do |msg|
-          %li= msg
-  .form-group
-    = f.label :title, class: 'control-label'
-    %br/
-    = f.text_field :title, class: 'form-control'
-    %span.help-block
-  .form-group
-    = f.label :description, class: 'control-label'
-    %br/
-    = f.text_field :description, class: 'form-control'
-    %span.help-block
-  .form-group
-    = f.label :movie_length, class: 'control-label'
-    %br/
-    = f.text_field :movie_length, class: 'form-control'
-    %span.help-block
-  .form-group
-    = f.label :director, class: 'control-label'
-    %br/
-    = f.text_field :director, class: 'form-control'
-    %span.help-block
-  .form-group
-    = f.label :rating, class: 'control-label'
-    %br/
-    = f.text_field :rating, class: 'form-control'
-    %span.help-block
-  .actions
-    = f.submit 'Submit', class: 'btn btn-default'
+.modal-dialog{:role => "document"}
+  .modal-content
+    .modal-header
+      %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+        %span{"aria-hidden" => "true"} ×
+      %h4#myModalLabel.modal-title
+        =action_name.capitalize 
+        Movie
+    .modal-body
+      = simple_form_for(@movie, remote: true,  html: {role: :form, multipart: true}, :data => { :model => 'movie' } , authenticity_token: true) do |f|
+        = f.input :title, autofocus: true, hint: ''
+        = f.input :description, hint: ''
+        = f.input :movie_length, hint: ''
+        = f.input :director, hint: ''
+        = f.input :rating, hint: ''
+        = f.input :image, as: :file
+        .modal-footer
+          = f.button :submit
+
