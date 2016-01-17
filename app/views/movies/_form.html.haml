@@ -1,22 +1,38 @@
-.modal-dialog
-  .modal-content
-    .modal-header
-      %button.close{"data-dismiss" => "modal" }
-        %span ×
-      %h4.modal-title 
-        =action_name.capitalize 
-        Movie
-
-    .modal-body
-      = simple_form_for(@movie, remote: true,  html: { multipart: true , class: 'well' }, authenticity_token: true) do |f|
-        %fieldset
-          %legend= (params[:action]).capitalize + " Movie"
-          = f.error_notification
-          = f.input :title, autofocus: true
-          = f.input :description
-          = f.input :movie_length
-          = f.input :director
-          = f.input :rating
-          = f.input :image, as: :file
-          = f.button :submit, {:style => "float: right;"}
-
+- modal ||= false
+- remote = modal ? true : false
+= form_for(@movie, remote: remote, html: {role: :form, 'data-model' => 'movie'}) do |f|
+  - if @movie.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@movie.errors.count, "error")
+        prohibited this person from being saved:
+      %ul
+        - @movie.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = f.label :title, class: 'control-label'
+    %br/
+    = f.text_field :title, class: 'form-control'
+    %span.help-block
+  .form-group
+    = f.label :description, class: 'control-label'
+    %br/
+    = f.text_field :description, class: 'form-control'
+    %span.help-block
+  .form-group
+    = f.label :movie_length, class: 'control-label'
+    %br/
+    = f.text_field :movie_length, class: 'form-control'
+    %span.help-block
+  .form-group
+    = f.label :director, class: 'control-label'
+    %br/
+    = f.text_field :director, class: 'form-control'
+    %span.help-block
+  .form-group
+    = f.label :rating, class: 'control-label'
+    %br/
+    = f.text_field :rating, class: 'form-control'
+    %span.help-block
+  .actions
+    = f.submit 'Submit', class: 'btn btn-default'

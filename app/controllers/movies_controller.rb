@@ -25,6 +25,7 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
     @movies = Movie.all
+    @movie = current_user.movies.build
   end
 
   # GET /movies/1
@@ -52,8 +53,23 @@ class MoviesController < ApplicationController
   def create
     @movie = current_user.movies.build(movie_params)
     @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
-    flash.now[:success] = "Movie was successfully created." if @movie.save
-    respond_with(@movies)
+    
+    #render :partial => "movie", :locals => { :movie => @movie }, :layout => false, :status => :create
+    #render nothing: true
+    #respond_with(@movies)
+    respond_to do |format|
+      if @movie.save
+        format.html { redirect_to @movie, notice: 'Person was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @movie }
+        # added:
+        format.js   { render action: 'show', status: :created, location: @movie }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @movie.errors, status: :unprocessable_entity }
+        # added:
+        format.js   { render json: @movie.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /movies/1
