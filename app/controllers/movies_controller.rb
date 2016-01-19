@@ -3,16 +3,13 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :test ]
   before_filter :set_javascript_vars
   
-  
   def test
-      @movie = current_user.movies.build
-      
-      #respond_with(@movies)
-      render :partial => "form", :locals => { :movie => @movie }, :layout => false, :status => :created
-      # format.json { head :no_content }
-      # format.js{ render :layout => false }
-      # render nothing: true
-  end
+   logger.info "############################################"
+   respond_to do |format|
+      format.html { render :nothing => true, :status => :ok }
+      format.js   { render :nothing => true, :status => :ok }
+   end
+  end 
 
   def search
      if params[:search].present?
@@ -25,7 +22,6 @@ class MoviesController < ApplicationController
   # GET /movies.json
   def index
     @movies = Movie.all
-    @movie = current_user.movies.build
   end
 
   # GET /movies/1

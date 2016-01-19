@@ -68,6 +68,7 @@ group :development, :test do
    gem 'web-console', '~> 2.0'
    gem 'meta_request'
    gem 'better_errors'
+   gem 'quiet_assets'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

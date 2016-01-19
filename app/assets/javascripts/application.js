@@ -13,18 +13,11 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require masonry/jquery.masonry
-//= require masonry/modernizr-transitions
-//= require masonry/jquery.imagesloaded.min
 //= require jquery.remotipart
 //= require bootstrap-sprockets
 //= require plugin
 //= require turbolinks
+//= require_self
 
-//= require global
-//= require_tree ./elements
-//= require_tree ./utilities
-//= require base
-//= require_tree ./controller
 
 

@@ -143,6 +143,8 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
     puma (2.15.3)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
@@ -249,6 +251,7 @@ DEPENDENCIES
   paloma
   paperclip (~> 4.2.4)
   puma (~> 2.15.3)
+  quiet_assets
   rails (= 4.2.5)
   rails_script (~> 0.6.1)
   remotipart (~> 1.2.1)

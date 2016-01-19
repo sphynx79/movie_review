@@ -3,9 +3,9 @@
   %head
     %title MovieReview
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true 
+    = javascript_include_tag 'application',"#{javascript_include_view_js}",'app', 'data-turbolinks-track' => true 
     = csrf_meta_tags
-  %body{ data: {controller:"Movies", action: "test"} }
+  %body{:class => "#{controller_name} #{action_name}"}
     = render 'layouts/header' 
     .container
       / Modal
@@ -13,4 +13,4 @@
       - flash.each do |name,msg|
         = content_tag :div, msg, class: 'alert alert-info'
       = yield
-      = include_rails_script
+    = include_rails_script
