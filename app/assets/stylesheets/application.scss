@@ -22,7 +22,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
-@import "bootstrap";
+// ho copiato da bootstrap-sass il file _bootstrap.scss e lo ho messo nei miei assets
+// lo ho rinominato _bootstrap-custom.css e ho tolto i componenti che non mi interessano
+// vedere documentazione https://github.com/twbs/bootstrap-sass
+@import 'bootstrap-custom';
 @import "bootstrap/theme";
 
 body {
