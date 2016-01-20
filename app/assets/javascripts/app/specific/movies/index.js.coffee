@@ -3,7 +3,4 @@
 #= require masonry/jquery.imagesloaded.min
 #
 
-$(document).on 'click', '#test', (e) ->
-  alert 'test'
-
 

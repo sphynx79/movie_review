@@ -1,7 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show, :test ]
-  before_filter :set_javascript_vars
   
   def test
    logger.info "############################################"
@@ -102,8 +101,5 @@ class MoviesController < ApplicationController
       params.require(:movie).permit(:title, :description, :movie_length, :director, :rating, :image)
     end
 
-    def set_javascript_vars
-       to_javascript controller: controller_name.capitalize
-    end
 
 end

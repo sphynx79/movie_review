@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.5.2'
 
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'jquery-turbolinks'
 
@@ -45,9 +45,8 @@ gem 'remotipart', '~> 1.2.1'
 
 gem 'responders', '~> 2.1.1'
 
-gem 'paloma'
+gem 'initjs',  '~> 2.1.2'
 
-gem 'rails_script', '~> 0.6.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

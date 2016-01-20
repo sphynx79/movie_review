@@ -106,6 +106,9 @@ GEM
       nokogiri (~> 1.6.0)
       ruby_parser (~> 3.5)
     i18n (0.7.0)
+    initjs (2.1.2)
+      jquery-rails
+      rails (>= 3.1)
     jbuilder (2.4.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -135,8 +138,6 @@ GEM
     nokogiri (1.6.7.1-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
-    paloma (4.2.1)
-      jquery-rails
     paperclip (4.2.4)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -170,8 +171,6 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
-    rails_script (0.6.1)
-      coffee-rails (~> 4.0, >= 4.0.0)
     railties (4.2.5)
       actionpack (= 4.2.5)
       activesupport (= 4.2.5)
@@ -237,23 +236,22 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   better_errors
-  bootstrap-sass (~> 3.3.5)
+  bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.2)
   haml-rails (~> 0.9.0)
   hirb (~> 0.7.3)
+  initjs (~> 2.1.2)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
   masonry-rails (~> 0.2.4)
   meta_request
-  paloma
   paperclip (~> 4.2.4)
   puma (~> 2.15.3)
   quiet_assets
   rails (= 4.2.5)
-  rails_script (~> 0.6.1)
   remotipart (~> 1.2.1)
   responders (~> 2.1.1)
   sass-rails (~> 5.0)
