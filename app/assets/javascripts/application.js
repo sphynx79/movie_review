@@ -14,10 +14,10 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery.remotipart
-//= bootstrap-sprockets-custom
+//= require bootstrap-sprockets-custom
 //= require plugin
 //= require turbolinks
-//= require_self
 
+//= require app.js
 
 
