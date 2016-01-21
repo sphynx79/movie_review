@@ -3,8 +3,12 @@ class App.Base
 
  constructor: ->
   if (window.jQuery) then @setClearEventHandlers() # clearing application event handlers only possible with jQuery
-  #@setLinkEventHandlers()
+
+  @setUtilityConfirmation()
+  @setElementToast()
+  @setUtilityModal()
   @setFormEventHandlers()
+  #@setLinkEventHandlers()
   new Element.Toast
   return this
 
@@ -51,11 +55,24 @@ class App.Base
       $(document).bind('ajax:error', 'form#new_movie', (event, xhr, status, error) ->
         console.log 'error'
         # note: jqxhr.responseJSON undefined, parsing responseText instead
+
         $(event.data).render_form_errors $.parseJSON(xhr.responseText)
         return
       ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->
         console.log 'sucess'
         return
+
+  setUtilityConfirmation: ->
+    new Utility.Confirmation()
+
+  setElementToast: ->
+    new Element.Toast()
+
+  setUtilityModal: ->
+     new Utility.Modal()
+    
+    
+
       
 
 

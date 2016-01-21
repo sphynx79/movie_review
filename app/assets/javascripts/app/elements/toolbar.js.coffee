@@ -1,13 +1,13 @@
 window.Element ||= {}
 class Element.Toolbar
 
-  constructor: ($element,$option) ->
-     @element = $element
-     @option  = $option
-     @setting()
+  constructor: (element,option) ->
+     @element = $(element)
+     @option  = option
+     @setOption()
      return this
 
-   setting: =>
+   setOption: =>
       @element.toolbar
          content: @option
          position: 'bottom'

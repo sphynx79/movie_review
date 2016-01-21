@@ -13,21 +13,18 @@ class App.Movies extends App.Base
 
   index: =>
     console.log "index"
-    new Utility.Masonry($('.box'), $('#movies'))
+    new Utility.Masonry('.box', '#movies')
     return
 
 
   show: =>
     console.log "show"
-    new Element.Confirmation()
-    new Element.Toolbar($('#editmenu'),'#user-options')
+    new Element.Toolbar('#editmenu','#user-options')
     return
 
 
   new: =>
-    console.log "show"
-    $('#modal-window').html @resp.responseText
-    $('#modal-window').modal 'show'
+    console.log "new"
     return
 
 
@@ -40,6 +37,4 @@ class App.Movies extends App.Base
      return
 
   test: () =>
-    $('#modal-window').html @resp.responseText
-    $('#modal-window').modal 'show'
     return

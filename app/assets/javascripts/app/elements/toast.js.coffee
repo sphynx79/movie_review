@@ -2,6 +2,9 @@ window.Element ||= {}
 class Element.Toast
 
   constructor: ->
+    @setOption()
+
+  setOption: =>
     $.toast.options =
       text: ''
       heading: ''
@@ -20,4 +23,4 @@ class Element.Toast
       afterShown: ->
       beforeHide: ->
       afterHidden: ->
-    return this
+

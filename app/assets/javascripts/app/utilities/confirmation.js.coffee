@@ -1,5 +1,5 @@
-window.Element ||= {}
-class Element.Confirmation
+window.Utility ||= {}
+class Utility.Confirmation
 
    constructor: ->
      $.rails.allowAction = (link) ->

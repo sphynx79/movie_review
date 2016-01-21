@@ -18,6 +18,4 @@
 //= require plugin
 //= require turbolinks
 
-//= require app.js
-
 
