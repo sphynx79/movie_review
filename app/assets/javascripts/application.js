@@ -18,7 +18,6 @@
 //= require plugin
 //= require turbolinks
 
-//= require init.js
-//= require movie_review/movie_review
+//= require app.js
 
 

@@ -45,7 +45,7 @@ gem 'remotipart', '~> 1.2.1'
 
 gem 'responders', '~> 2.1.1'
 
-gem 'initjs',  '~> 2.1.2'
+gem 'rails_script', '~> 0.6.1'
 
 
 # Use ActiveModel has_secure_password
