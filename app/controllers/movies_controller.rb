@@ -6,6 +6,7 @@ class MoviesController < ApplicationController
    logger.info "############################################"
    respond_to do |format|
       format.html { render :nothing => true, :status => :ok }
+      # format.html {}
       format.js   { render :nothing => true, :status => :ok }
    end
   end 
