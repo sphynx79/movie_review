@@ -9,7 +9,6 @@ class App.Base
   @setUtilityModal()
   @setFormEventHandlers()
   #@setLinkEventHandlers()
-  new Element.Toast
   return this
 
 
