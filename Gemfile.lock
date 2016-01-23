@@ -75,7 +75,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    ejs (1.1.1)
     elasticsearch (1.0.15)
       elasticsearch-api (= 1.0.15)
       elasticsearch-transport (= 1.0.15)
@@ -240,7 +239,6 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise (~> 3.5.2)
-  ejs
   haml-rails (~> 0.9.0)
   hirb (~> 0.7.3)
   jbuilder (~> 2.0)
