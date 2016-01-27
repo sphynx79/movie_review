@@ -51,14 +51,17 @@ class App.Base
          return this
 
    setFormEventHandlers: ->
-      $(document).bind('ajax:error', 'form#new_movie', (event, xhr, status, error) ->
+      $(document).on('ajax:error', 'form#new_movie', (event, xhr, status, error) ->
         console.log 'error'
         # note: jqxhr.responseJSON undefined, parsing responseText instead
-
         $(event.data).render_form_errors $.parseJSON(xhr.responseText)
         return
       ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->
-        console.log 'sucess'
+         $(this).modal_success()
+         
+         # event.preventDefault()
+         # Utility.Modal.modalSuccess('#modal-window')
+         console.log 'sucess'
         return
 
   setUtilityConfirmation: ->
@@ -68,7 +71,7 @@ class App.Base
     new Element.Toast()
 
   setUtilityModal: ->
-     new Utility.Modal()
+    new Utility.Modal("#modal-window")
     
     
 

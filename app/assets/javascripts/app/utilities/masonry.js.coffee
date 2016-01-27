@@ -11,14 +11,13 @@ class Utility.Masonry
   setOption: =>
    @boxes.hide()
    @container.imagesLoaded =>
-      @boxes.fadeIn()
+      @boxes.fadeIn(300)
       @container.masonry
          itemSelector: @box
          isFitWidth: true
          isAnimated: !Modernizr.csstransitions
   
   refresh: =>
-    console.log "refresh"
     @container.masonry(
       itemSelector: @box
       isFitWidth: true

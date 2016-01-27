@@ -1,4 +1,4 @@
-%nav.navbar.navbar-default
+%nav.navbar.navbar-default#nav{"data-turbolinks-permanent" => "true"}
   .container
     / Brand and toggle get grouped for better mobile display
     .navbar-header
@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      =link_to "Movie Reviews", movies_path, class: 'navbar-brand', :data => { no_turbolink: true }
+      =link_to "Movie Reviews", movies_path, class: 'navbar-brand'
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav

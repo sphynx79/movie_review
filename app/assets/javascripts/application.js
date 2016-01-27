@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery.turbolinks
+//= require jquery2
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require bootstrap-sprockets-custom
 //= require plugin
 //= require turbolinks
 
+Turbolinks.enableTransitionCache();
