@@ -1,34 +1,18 @@
 window.Utility ||= {}
 class Utility.Modal
 
-  constructor:(id)->
-    @id = ($(id))
+  constructor: ->
     @handleEvent()
-
-  @modalSuccess:(id) ->
-    $(id).modal("hide")
-    @masonry = new Utility.Masonry('.box', '#movies')
-    @masonry.refresh()
 
 
   handleEvent: =>
     (($) ->
       $.fn.modal_success = ->
         # close modal
-        debugger
-        $modalWindow= $(this).parents("#modal-window")
-        $modalWindow.modal('hide')
-        
-        
-        $modalWindow.on 'hidden.bs.modal', (e) ->
-              new Utility.Masonry('.box', '#movies').refresh()
-       
-        
-        # clear form input elements
-        # todo/note: handle textarea, select, etc
-        # @find('form input[type="text"]').val ''
-        # clear error state
-        # @clear_previous_errors()
+        $modal = this.closest('.modal')
+        $modal.modal('hide')
+        @masonry = new Utility.Masonry('.box', '#movies')
+        @masonry.refresh()
         return
 
       $.fn.render_form_errors = (errors) ->

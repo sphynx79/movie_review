@@ -57,11 +57,8 @@ class App.Base
         $(event.data).render_form_errors $.parseJSON(xhr.responseText)
         return
       ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->
-         $(this).modal_success()
-         
-         # event.preventDefault()
-         # Utility.Modal.modalSuccess('#modal-window')
-         console.log 'sucess'
+        console.log 'sucess'
+        $(this).modal_success()
         return
 
   setUtilityConfirmation: ->
@@ -71,7 +68,7 @@ class App.Base
     new Element.Toast()
 
   setUtilityModal: ->
-    new Utility.Modal("#modal-window")
+     new Utility.Modal()
     
     
 
