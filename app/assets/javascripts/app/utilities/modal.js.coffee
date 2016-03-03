@@ -9,19 +9,14 @@ class Utility.Modal
     (($) ->
       $.fn.modal_success = ->
         # close modal
-        @modal 'hide'
-        @modal = new Utility.Masonry('.box', '#movies')
-        @modal.refresh()
-        # clear form input elements
-        # todo/note: handle textarea, select, etc
-        # @find('form input[type="text"]').val ''
-        # clear error state
-        # @clear_previous_errors()
+        $modal = this.closest('.modal')
+        $modal.modal('hide')
+        @masonry = new Utility.Masonry('.box', '#movies')
+        @masonry.refresh()
         return
 
       $.fn.render_form_errors = (errors) ->
         $form = this
-        console.log @data('model')
         @clear_previous_errors()
         model = @data('model')
         # show error messages in input form-group help-block
