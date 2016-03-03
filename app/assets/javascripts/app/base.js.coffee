@@ -59,6 +59,7 @@ class App.Base
         return
       ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->
         console.log 'sucess'
+        $(this).modal_success()
         return
 
   setUtilityConfirmation: ->
