@@ -21,6 +21,7 @@ class Utility.Modal
 
       $.fn.render_form_errors = (errors) ->
         $form = this
+        console.log @data('model')
         @clear_previous_errors()
         model = @data('model')
         # show error messages in input form-group help-block
