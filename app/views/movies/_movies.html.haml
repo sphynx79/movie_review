@@ -3,5 +3,16 @@
 
 <script type='text/javascript'>
 = render(:partial => 'notification', :handlers => [:erb], :formats => [:js])
+$('.star-rating').raty({
+path: '/assets/',
+readOnly: true,
+starHalf: 'star-half-small.png',
+starOff: 'star-off-small.png',
+starOn: 'star-on-small.png',
+score: function() {
+return $(this).attr('data-score');
+}
+});
 </script>
+
 
