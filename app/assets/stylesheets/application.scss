@@ -291,6 +291,17 @@ em.glyphicon-cog {
 #editmenu em { opacity: 1; }
 #editmenu:hover em { opacity: 0.9; }
 
+div.container > div.row > div.col-md-4 > img{
+border-radius: 4px 4px 4px 4px;
+-moz-border-radius: 4px 4px 10px 4px;
+-webkit-border-radius: 4px 4px 4px 4px;
+border: 0px solid #000000;
+
+-webkit-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.2);
+box-shadow: 4px 4px 8px 0px rgba(0,0,0,0.2);
+}
+
 
 // #movies .box {position: absolute; left: -1000px}
 // #movies {display:none}
