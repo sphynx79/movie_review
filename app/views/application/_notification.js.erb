@@ -3,11 +3,19 @@
 <% flash.each do |type, message| %>
 setTimeout(function() {
 
-  $.toast({
-    heading: "<%= type %>",
-    text: "<%= message %>",
-    icon: "<%= type %>"
-}); 
+   Lobibox.notify("<%= type %>", {
+    size: 'mini',
+    rounded: false,
+    delay: false,
+    position: 'top right', //or 'center bottom'
+    sound: false,
+    delay: 2400, 
+    closable: false,
+    width: 340, 
+    delayIndicator: true,
+    msg: "<%= message %>"
+       
+    });
 
 }, <%= timeout %> )
 <% timeout += 1400 %>

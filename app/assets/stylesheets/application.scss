@@ -88,11 +88,6 @@ h5, h6 {
    zoom: 1;
 }
 
-.end-form{
-   border-bottom: 1px solid #D1D1D1; 
-   padding-top: 20px;
-   }
-
 #movies {
    .review h6 {
       margin-bottom: .35em;
@@ -176,7 +171,6 @@ h5, h6 {
 
 #reviews {
    .review {
-      border-bottom: 1px solid #D1d1d1;
       margin-bottom: 1.2em;
       margin-top: 20px;
       padding-bottom: 10px;
@@ -187,7 +181,6 @@ h5, h6 {
 
       .buttons {
          float: right;
-         bottom: 34px;
       }
 
       .review_content {
@@ -212,11 +205,11 @@ h5, h6 {
 
 
       .review_author {
+         border-bottom: 1px solid #D1d1d1;
          color: #397CAC;
          margin-top: .5rem;
          font-size: 0.8em;
          font-weight: 700;
-         width: 70%;
          margin-bottom: 20px;
       }
    }

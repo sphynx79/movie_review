@@ -5,7 +5,7 @@
     %span.review_time(title="#{review.updated_at.getutc.iso8601 }")= time_ago_in_words(review.updated_at)
     %div.review_rating(data-score="#{review.rating}")
     - if (user_signed_in? && (current_user.id == review.user.id)) 
-      .buttons.btn-group.btn-group-xs
+      .buttons.btn-group.btn-group-xs.pull-right
         = link_to 'Edit', edit_movie_review_path(review.movie, review),  remote: true, class: "btn btn-default"
         = link_to "Delete", movie_review_path(review.movie, review), method: :delete,  remote: true, data: { confirm: "Delete comment?" }, class: "btn btn-default"
 

@@ -5,7 +5,6 @@ class App.Base
   if (window.jQuery) then @setClearEventHandlers() # clearing application event handlers only possible with jQuery
 
   @setUtilityConfirmation()
-  @setElementToast()
   @setUtilityModal()
   @setFormEventHandlers()
   #@setLinkEventHandlers()
@@ -63,9 +62,6 @@ class App.Base
 
   setUtilityConfirmation: ->
     new Utility.Confirmation()
-
-  setElementToast: ->
-    new Element.Toast()
 
   setUtilityModal: ->
      new Utility.Modal()
