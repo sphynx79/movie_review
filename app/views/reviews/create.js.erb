@@ -1,5 +1,6 @@
 <%  unless  @review.errors.any?  %>
-$( '<%= j(render @review) %>' ).hide().insertBefore($('.review').first()).show( "slow" );
+window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+$('<%= j(render @review) %>').hide().appendTo('#reviews_wrapper').show().addClass('magictime puffIn');
 $("#new_review").trigger('reset');
 <%= render 'update_star', formats: [:js] %>
 <% end  %>

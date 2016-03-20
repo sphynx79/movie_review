@@ -2,6 +2,7 @@
 <% timeout = 200 %>
 <% flash.each do |type, message| %>
 setTimeout(function() {
+   console.log("<%= message %>")
 
    Lobibox.notify("<%= type %>", {
     size: 'mini',

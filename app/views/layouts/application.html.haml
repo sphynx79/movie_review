@@ -10,7 +10,9 @@
     .container
       / Modal
       #modal-window.modal.fade{"aria-labelledby" => "myModalLabel", "aria-hidden"=> "true", :role => "dialog", :tabindex => "-1"}
+      - render(:partial => 'notification', :handlers => [:erb], :formats => [:js])
       - flash.each do |name,msg|
         = content_tag :div, msg, class: 'alert alert-info'
       = yield
+      #footer
     = include_rails_script

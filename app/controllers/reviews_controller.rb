@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     @review.movie_id = @movie.id
     if @review.save
-       flash.now[:success] = 'Comment was successfully created.' 
+       # flash.now[:success] = 'Comment was successfully created.' 
        set_reviews
     else
        flash.now[:error] = @review.errors.full_messages.to_sentence
@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review.destroy
     set_reviews
-    flash.now[:info] = 'Review was successfully destroyed.'
+    # flash.now[:info] = 'Review was successfully destroyed.'
     respond_with(@review, location: -> { movie_path(@movie) })
   end
 

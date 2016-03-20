@@ -1,0 +1,8 @@
+<%= render 'notification', formats: [:js] %>
+
+setTimeout(function(){
+    window.location.href = "<%= escape_javascript(movies_path) %>";
+}, 2200);
+
+
+
