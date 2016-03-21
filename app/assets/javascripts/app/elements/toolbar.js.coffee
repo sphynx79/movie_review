@@ -11,7 +11,6 @@ class Element.Toolbar
       @element.toolbar
          content: @option
          position: 'bottom'
-         event: 'click'
-         hideOnClick: true
+         event: 'hover'
 
 
