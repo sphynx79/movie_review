@@ -53,7 +53,7 @@ class App.Base
       $(document).on('ajax:error', 'form#new_movie', (event, xhr, status, error) ->
         console.log 'error'
         # note: jqxhr.responseJSON undefined, parsing responseText instead
-        $(event.data).render_form_errors $.parseJSON(xhr.responseText)
+        $(event.target).render_form_errors $.parseJSON(xhr.responseText)
         return
       ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->
         console.log 'sucess'
