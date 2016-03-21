@@ -24,6 +24,8 @@
     scoreName: 'review[rating]',
     score: function() {
               return $(this).attr('data-score');
-      }
-  
+      },
+    click: function(score, evt) {
+    alert('ID: ' + $(this).attr('id') + "\nscore: " + score + "\nevent: " + evt);  
+     }
   });
