@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
      else
         @movies = Movie.all
      end
+     render "index"
   end
   # GET /movies
   # GET /movies.json

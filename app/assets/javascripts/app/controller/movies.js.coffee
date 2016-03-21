@@ -22,6 +22,12 @@ class App.Movies extends App.Base
     new Element.Toolbar('#editmenu','#user-options')
     return
 
+  
+  search: =>
+    console.log "search"
+    new Utility.Masonry('.box', '#movies')
+    return
+
 
   new: =>
     console.log "new"
