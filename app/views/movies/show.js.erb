@@ -1,3 +1,11 @@
-$("<%= j(render @movie) %>").hide().appendTo('#movies').show()
+if( window.location.pathname !== "/movies") {
+	window.location.href = "<%= movies_path %>"
+} 
+else {
+   $("<%= j(render @movie) %>").hide().appendTo('#movies').show()
+}
+
+
+
 // $('#modal-window').modal_success();
 
