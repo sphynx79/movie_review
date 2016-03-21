@@ -50,9 +50,9 @@ class App.Base
          return this
 
    setFormEventHandlers: ->
-      $(document).on('ajax:error', 'form#new_movie', (event, xhr, status, error) ->
+      $(document).on('ajax:error', 'form#new_movie, form[id^=edit_movie]' , (event, xhr, status, error) ->
+        event.preventDefault()
         console.log 'error'
-        # note: jqxhr.responseJSON undefined, parsing responseText instead
         $(event.target).render_form_errors $.parseJSON(xhr.responseText)
         return
       ).on 'ajax:success', 'form#new_movie', (event, data, status, xhr) ->

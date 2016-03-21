@@ -57,12 +57,10 @@ class MoviesController < ApplicationController
       if @movie.save
         format.html { redirect_to @movie, notice: 'Person was successfully created.' }
         format.json { render action: 'show', status: :created, location: @movie }
-        # added:
         format.js   { render action: 'show', status: :created, location: @movie }
       else
         format.html { render action: 'new' }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
-        # added:
         format.js   { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
@@ -74,11 +72,14 @@ class MoviesController < ApplicationController
      
     respond_to do |format|
       if @movie.update(movie_params)
+        flash.now[:info] = 'Review was successfully updated.'
         format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
-        format.js {}
+        format.js   {return render :js => "window.location.href = '#{movie_path(@movie)}'" }
+        format.js   {render :format => 'html'}
       else
         format.html { render :edit }
-        format.js {}
+        format.json { render json: @movie.errors, status: :unprocessable_entity }
+        format.js   { render json: @movie.errors, status: :unprocessable_entity }
       end
     end
   end
