@@ -15,5 +15,10 @@ var el = $("#review_<%= @review.id %> .review_content");
 .fadeOut(500);
 <% end  %>
 
+ $('#star-rating').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]',
+        score: <%= @avg_review %>
+    });
 
 <%= render 'notification', formats: [:js] %>

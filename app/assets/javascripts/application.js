@@ -16,9 +16,6 @@
 //= require jquery.remotipart
 //= require bootstrap-sprockets-custom
 //= require plugin
-//= require masonry/jquery.masonry
-//= require masonry/modernizr-transitions
-//= require masonry/jquery.imagesloaded.min
 //= require turbolinks
 
 Turbolinks.enableTransitionCache();

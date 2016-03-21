@@ -36,6 +36,7 @@ class ReviewsController < ApplicationController
   def update
     respond_to do |format|
       if @review.update(review_params)
+        set_reviews
         format.html { redirect_to @review, notice: 'Review was successfully updated.' }
         format.js {}
       else

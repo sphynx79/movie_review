@@ -14,12 +14,12 @@
           .form-group
             = f.input :comment, :input_html => {rows: "4"}
             %span.headerTxt  Give a rating:
-            %span#star-rating(data-score="#{@review.rating}")
+            %span#modal-form-rating(data-score="#{@review.rating}")
         .form-actions
           = f.button :submit
 
 :javascript
-  $('#star-rating').raty({
+  $('#modal-form-rating').raty({
     path: '/assets/',
     scoreName: 'review[rating]',
     score: function() {
