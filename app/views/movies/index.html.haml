@@ -2,7 +2,7 @@
   .jumbotron
     %h1 Your Favorite Movies Reviewed
     %p Hashtag hoodie mumblecore selfies. Authentic keffiyeh leggings Kickstarter, narwhal jean shorts XOXO Vice Austin cardigan. Organic drinking vinegar freegan pickled.
-    %p= link_to "Sign Up To Write A Review", new_user_registration_path, class: "btn btn-primary btn-lg"
+    %p= link_to "Sign Up To Write A Review", remote_sign_in_path, :remote => true, class: "btn btn-primary btn-lg"
 
     
 #movies.transitions-enabled.clearfix.masonry.centered

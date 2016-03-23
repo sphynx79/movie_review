@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_movie
-  before_action :authenticate_user!,  except: [:create]
+  before_action :authenticate_user
   before_action :job_owner, only: [:edit, :update, :destroy]
 
 
@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 
   # POST /reviews
   def create
-   if user_signed_in? 
+   # if user_signed_in? 
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     @review.movie_id = @movie.id
@@ -27,9 +27,9 @@ class ReviewsController < ApplicationController
        flash.now[:error] = @review.errors.full_messages.to_sentence
     end
     respond_with(@review)
-   else
-      redirect_to  remote_sign_in_path and return
-   end
+   # else
+      # redirect_to  remote_sign_in_path and return
+   # end
   end
 
   # PATCH/PUT /reviews/1

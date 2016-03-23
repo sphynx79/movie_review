@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show, :test ]
+  before_action :authenticate_user, except: [:index, :show, :search, :test]
   
   def test
    logger.info "############################################"
@@ -105,5 +105,6 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :description, :movie_length, :director, :image)
     end
+
 
 end
