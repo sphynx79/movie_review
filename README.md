@@ -41,6 +41,6 @@ class App.Users extends App.Base
 &nbsp;
 
 #### Descrizione
-Qui di seguido una piccola dimostrazione dell'applicazione in azzione:
+Qui di seguido una piccola dimostrazione dell'applicazione in azione:
 
 [![Movie Review](https://i.ytimg.com/vi/shUwPNLtJMA/hqdefault.jpg)](https://www.youtube.com/watch?v=shUwPNLtJMA "Movie Review")
