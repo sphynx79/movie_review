@@ -76,7 +76,6 @@ class MoviesController < ApplicationController
         flash.now[:info] = 'Review was successfully updated.'
         format.html { redirect_to @movie, notice: 'Movie was successfully updated.' }
         format.js   {return render :js => "window.location.href = '#{movie_path(@movie)}'" }
-        format.js   {render :format => 'html'}
       else
         format.html { render :edit }
         format.json { render json: @movie.errors, status: :unprocessable_entity }
