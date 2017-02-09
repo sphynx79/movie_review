@@ -1,3 +1,4 @@
+//= require ./app/init
 //= require ./app/global
 //= require_tree ./app/elements
 //= require_tree ./app/utilities

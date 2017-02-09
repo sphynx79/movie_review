@@ -18,4 +18,4 @@
 //= require plugin
 //= require turbolinks
 
-Turbolinks.enableTransitionCache();
+
