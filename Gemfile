@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7'
+gem 'rails', '4.2.8'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -21,17 +21,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'devise', '~> 3.5.3'
+gem 'devise', '~> 4.4.1'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'jquery-turbolinks', '~> 2.1.0'
 
-gem 'searchkick', '~> 0.9.1'
+gem 'searchkick', '~> 3.0.0'
 
 gem 'simple_form', '~> 3.2.0'
 
-gem "hamlit", '~> 2.7.5'
+gem "hamlit", '~> 2.8.7'
 
 gem 'masonry-rails', '~> 0.2.4'
 
@@ -70,5 +70,5 @@ group :development, :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
 

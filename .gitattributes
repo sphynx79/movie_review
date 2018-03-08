@@ -1,0 +1,6 @@
+public/* linguist-vendored
+vendor/* linguist-vendored
+test/* linguist-vendored
+app/assets/stylesheets/magic.css linguist-vendored
+app/assets/stylesheets/jquery.toolbar.css linguist-vendored
+app/assets/stylesheets/lobibox.css linguist-vendored

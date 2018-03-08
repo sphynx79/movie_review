@@ -44,3 +44,11 @@ class App.Users extends App.Base
 Qui di seguido una piccola dimostrazione dell'applicazione in azione:
 
 [![Movie Review](https://i.ytimg.com/vi/shUwPNLtJMA/hqdefault.jpg)](https://www.youtube.com/watch?v=shUwPNLtJMA "Movie Review")
+
+
+#### Dipendenze
+Per far funzionare la ricerca devo installare elasticsearch(6.2.2), e avviare il server
+Nel caso in ci fossero dei problemi con l'index devo eseguire il seguente comando dalla root della mia app
+```
+rake searchkick:reindex:all
+```
